@@ -1,15 +1,64 @@
 // Find the maximum
 
+function maxOfTwoNumbers(a, b) {
+  if (a < b) {
+    return b;
+  } else if (a === b) {
+    return a;
+  } else {
+    return a
+  }
+}
+
+
+
 // Finding Longest Word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
+function findLongestWord (a){
+if (a.length === 0){
+  return null;
+}  
+let longestWord = a[0]
+for (let i=1; i<a.length; i++){
+  if (longestWord.length < a[i].length){
+    longestWord = a[i];
+  }
+}
+  return longestWord
+}
 // Calculating a Sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
+function sumArray (array){
+  
+  let sum = 0
+  for (let i=0 ; i < array.length ; i++){
+    if (!(typeof array[i] === 'number')){
+      continue
+    }else{
+      sum += array[i]
+  }
+  
+}
+  return sum
+}
+
 // Calculate the Average
 
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+
+
+function averageNumbers (array){
+  if (array.length === 0){
+  return null;
+  }else{
+  let sum= sumArray(array);
+  let avg = sum / array.length;
+  return avg;
+  }
+}
 
 // Array of Strings
 const wordsArr = [
@@ -24,6 +73,15 @@ const wordsArr = [
   'fuel',
   'palace'
 ];
+
+function averageWordLength (array){
+  let wordlength = []
+  for (i=0; i< array.length; i++){
+    wordlength.push(array[i].length)
+  }
+  return averageNumbers(wordlength);
+}
+
 
 // Unique Arrays
 const wordsUnique = [
@@ -40,6 +98,12 @@ const wordsUnique = [
   'bring'
 ];
 
+function uniquifyArray (array){
+  const newObjct = new Set(array)
+  const newArray = [...newObjct]
+  return newArray;
+}
+
 // Finding Elements
 const wordsFind = [
   'machine',
@@ -51,6 +115,14 @@ const wordsFind = [
   'truth',
   'disobedience'
 ];
+
+function doesWordExist(array, word) {
+  for (i = 0; i < array.length; i++) {
+    if (word === array[i])
+      return true
+  }
+  return false
+}
 
 // Counting Repetition
 const wordsCount = [
@@ -66,6 +138,16 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
+function howManyTimes(array, word) {
+  let rep = 0
+  for (i = 0; i < array.length; i++) {
+    if (word === array[i])
+      rep++
+  }
+  return rep
+}
+
 
 // Bonus
 
@@ -91,3 +173,5 @@ const matrix = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
+
+ 
